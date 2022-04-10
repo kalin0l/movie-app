@@ -19,7 +19,6 @@ const Movie = () => {
   const _id = useSelector((state) => state.movies._id);
   const createdRate = useSelector((state) => state.review.createdRate);
   const rateId = useSelector((state) => state.review.rateId);
-  console.log(rateId)
 
   const remove = (_id,id) => {
     dispatch(removeMov(_id));

@@ -19,7 +19,7 @@ const SingleMovie = ({ remove, addToFav, }) => {
     }, [dispatch, id]);
     
     const movie = useSelector((state) => state.movies.selectedMov);
-  console.log(movie.genres);
+    
   return (
     <React.Fragment>
       {movie && (
