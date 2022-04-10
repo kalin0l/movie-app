@@ -1,0 +1,136 @@
+section.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 20px;
+  height: 100vh;
+  background-color: white;
+  margin-left: 2rem;
+  margin-top: 20px;
+}
+section.container img {
+  width: 10%;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+.movie {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.movie-details .btn {
+  border: 0.5px solid darkgreen;
+  color: darkgreen;
+  background-color: white;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.movie-details .btn:hover {
+  background-color: darkgreen;
+  color: white;
+}
+.container .remove-btn {
+  border: 0.5px solid red;
+  color: red;
+  background-color: white;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.container .remove-btn:hover {
+  color: white;
+  background-color: red;
+}
+.review span {
+  color: rgb(231, 231, 8);
+  font-size: 20px;
+}
+.comments-section {
+  border-radius: 6px;
+  border: 0.3px solid black;
+}
+.comments-section .comment {
+  width: 20vw;
+  height: 7vh;
+  border-radius: 6px;
+}
+.comment p {
+  margin-left: 10px;
+}
+.comment-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: lightgray;
+  opacity: 0.6;
+  border-radius: 6px;
+}
+textarea {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+textarea .error {
+  border: 0.2px solid orange;
+}
+.your-review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.your-review .review-inputs {
+  display: flex;
+  align-items: center;
+}
+.review-inputs button,
+.review-details button,
+.container button {
+  margin-left: 10px;
+  background-color: rgb(89, 129, 129);
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  font-size: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.button {
+  position: fixed;
+  left: 0;
+  top: 7rem;
+  margin-left: 10px;
+  background-color: rgb(89, 129, 129);
+  color: white;
+  border: none;
+  padding: 6px;
+  border-radius: 6px;
+  font-size: bold;
+  cursor: pointer;
+  text-decoration: none;
+}
+.review-inputs button:hover,
+.review-details button:hover,
+.container button:hover,
+.button:hover {
+  background-color: white;
+  color: rgb(89, 129, 129);
+  border: 0.5px solid rgb(89, 129, 129);
+}
+.your-review input {
+  padding: 6px;
+  width: 100%;
+  outline: none;
+}
+.review-details {
+  display: flex;
+  align-items: center;
+}
