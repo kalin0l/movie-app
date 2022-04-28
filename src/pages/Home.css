@@ -80,10 +80,13 @@ form .btn:hover {
   grid-row: 3/4;
   background-color: #fff;
   height: 100%;
+  position: relative;
+
 }
 .favourites img {
   width: 100px;
   height: 100px;
+  margin-right: 10px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -94,6 +97,19 @@ form .btn:hover {
 }
 .fav-movs div {
     margin-right: 1rem;
+}
+.fav-movs button {
+  position: absolute;
+  z-index: 100;
+  background-color: rgb(89, 129, 129);
+  bottom: 252px;
+  border-radius: 50%;
+  margin-left: -20px;
+  border: none;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  color: white;
 }
 
 footer {

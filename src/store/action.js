@@ -11,7 +11,7 @@ export const getFilteredRes = (mov) => {
       dispatch(movieSliceActions.setMovies(data));
     } catch (err) {
       dispatch(movieSliceActions.setLoading());
-      dispatch(movieSliceActions.setError())
+      dispatch(movieSliceActions.setError(err.message))
       console.log(err);
     }
   };
@@ -27,7 +27,7 @@ export const lookUpMov = (id) => {
       dispatch(movieSliceActions.setMovie(data));
     } catch (err) {
       dispatch(movieSliceActions.setLoading());
-      dispatch(movieSliceActions.setError())
+      dispatch(movieSliceActions.setError(err.message))
       console.log(err);
     }
   };
@@ -56,12 +56,13 @@ export const addToFav = (id, title, img, genre, runtime, summary) => {
       dispatch(movieSliceActions.setId(data.movie.id));
       dispatch(movieSliceActions.set_id(data.movie._id));
     } catch (err) {
-      dispatch(movieSliceActions.setError())
+      dispatch(movieSliceActions.setError(err.message))
       console.log(err);
     }
   };
 };
 export const removeMov = (id) => {
+  console.log(id);
   return async (dispatch) => {
     try {
       const res = await fetch(
@@ -73,7 +74,7 @@ export const removeMov = (id) => {
       const data = await res.json();
       console.log(data);
     } catch (err) {
-      dispatch(movieSliceActions.setError())
+      dispatch(movieSliceActions.setError(err.message))
       console.log(err);
     }
   };
@@ -85,6 +86,7 @@ export const getAllFavMovies = () => {
       dispatch(movieSliceActions.setLoading());
       const res = await fetch(`http://localhost:5000/api/movies/favourites`);
       const data = await res.json();
+      
       if (!res.ok) {
         throw new Error(data.message);
       }
@@ -92,7 +94,7 @@ export const getAllFavMovies = () => {
       dispatch(movieSliceActions.setFavMovies(data));
     } catch (err) {
       dispatch(movieSliceActions.setLoading());
-      dispatch(movieSliceActions.setError())
+      dispatch(movieSliceActions.setError(err.message))
       console.log(err);
     }
   };
@@ -114,7 +116,7 @@ export const createComm = (comment, creator) => {
       const data = await res.json();
       dispatch(reviewSliceActions.setNewComment(data));
     } catch (err) {
-      dispatch(movieSliceActions.setError())
+      dispatch(movieSliceActions.setError(err.message))
       console.log(err);
     }
   };
@@ -131,7 +133,7 @@ export const getComm = (id) => {
       dispatch(reviewSliceActions.setComments(data.comments));
     } catch (err) {
       dispatch(movieSliceActions.setLoading());
-      dispatch(movieSliceActions.setError())
+      dispatch(movieSliceActions.setError(err.message))
       console.log(err);
     }
   };
@@ -146,7 +148,7 @@ export const removeComment = (id) => {
       const data = await res.json();
       console.log(data);
     } catch (err) {
-      dispatch(movieSliceActions.setError())
+      dispatch(movieSliceActions.setError(err.message))
       console.log(err);
     }
   };
@@ -166,7 +168,7 @@ export const createRate = (rate,creator) => {
       const data = await res.json();
       dispatch(reviewSliceActions.setCreatedRate(data.rating.rate));
     } catch (err) {
-      dispatch(movieSliceActions.setError())
+      dispatch(movieSliceActions.setError(err.message))
       console.log(err);
     }
   };
@@ -180,7 +182,7 @@ export const getRate = (id) => {
       dispatch(reviewSliceActions.setRateId(data.rate[0]._id))
       dispatch(reviewSliceActions.getRating(data.rate[0].rate));
     } catch (err) {
-      dispatch(movieSliceActions.setError())
+      dispatch(movieSliceActions.setError(err.message))
       console.log(err);
     }
   };
@@ -193,7 +195,7 @@ export const removeRate = (id) => {
       console.log(data);
       dispatch(reviewSliceActions.setRateId(''))
     }catch(err){
-      dispatch(movieSliceActions.setError())
+      dispatch(movieSliceActions.setError(err.message))
       console.log(err);
     }
   }
